@@ -1,0 +1,15 @@
+{
+  "name": "kyungdong-compliment-2026",
+  "version": "1.0.0",
+  "description": "경동초등학교 칭찬 우체통 (kyungdongcompliment2026.com)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

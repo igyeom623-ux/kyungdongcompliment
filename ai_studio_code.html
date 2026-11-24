@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>경동초등학교 칭찬 우체통 | kyungdongcompliment2026.com</title>
+  <link rel="canonical" href="https://kyungdongcompliment2026.com" />
+  <meta property="og:title" content="경동초등학교 칭찬 우체통 💌" />
+  <meta property="og:description" content="경동초등학교 학생들이 서로 따뜻한 칭찬을 나누는 공간입니다." />
+  <meta property="og:url" content="https://kyungdongcompliment2026.com" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #ff7b54;
+      --primary-light: #fff0eb;
+      --secondary: #ffb26b;
+      --accent: #4ecdc4;
+      --bg: #fdfaf5;
+      --card: #ffffff;
+      --text: #333333;
+      --muted: #777777;
+      --danger: #e74c3c;
+      --border: #f0e6da;
+      --shadow: 0 8px 24px rgba(255, 123, 84, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: var(--bg);
+      background-image: radial-gradient(#ffe8d6 1px, transparent 1px);
+      background-size: 24px 24px;
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    h1, h2, h3, .jua { font-family: 'Jua', 'Noto Sans KR', sans-serif; }
+
+    /* 상단 바 */
+    .top-bar {
+      background: #fff8f3;
+      border-bottom: 1.5px solid var(--border);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .domain-tag {
+      color: var(--primary);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .auth-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .auth-btn {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1.5px solid var(--primary);
+      background: white;
+      color: var(--primary);
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .auth-btn.primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff7b54, #ffb26b);
+      color: white;
+      padding: 26px 20px 34px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(255, 123, 84, 0.25);
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 28px;
+    }
+    header h1 { font-size: 2.2rem; margin-bottom: 6px; }
+
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: -22px auto 28px;
+      padding: 0 16px;
+      max-width: 760px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      font-family: 'Jua', sans-serif;
+      font-size: 1.1rem;
+      padding: 12px 24px;
+      border: 3px solid white;
+      border-radius: 999px;
+      background: white;
+      color: var(--text);
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 6px 16px rgba(78, 205, 196, 0.35);
+    }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 18px 60px; }
+    .section { display: none; }
+    .section.active { display: block; }
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 2px solid var(--border);
+    }
+    .section-title { font-size: 1.6rem; color: var(--primary); margin-bottom: 18px; }
+
+    .notice-box {
+      background: #fff9db;
+      border: 2px dashed #ffd43b;
+      border-radius: 14px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      color: #665200;
+    }
+
+    .login-required-box {
+      text-align: center;
+      padding: 36px 20px;
+      background: #fafafa;
+      border-radius: 16px;
+      border: 2px dashed #ddd;
+    }
+
+    .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .input-row { grid-template-columns: 1fr; } }
+
+    label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--muted); margin-bottom: 5px; }
+    input, select, textarea {
+      width: 100%; padding: 10px 12px; border: 2px solid #e6dfd5;
+      border-radius: 12px; font-family: inherit; font-size: 0.95rem; background: white;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); }
+    textarea { min-height: 130px; resize: vertical; }
+
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 18px; }
+    .tag-chip {
+      padding: 7px 14px; border-radius: 999px; border: 2px solid #e6dfd5;
+      background: white; cursor: pointer; font-size: 0.9rem;
+    }
+    .tag-chip.selected {
+      background: var(--primary-light); border-color: var(--primary); color: var(--primary); font-weight: 700;
+    }
+
+    .sincerity-meter { margin-top: 10px; background: #f3f3f3; border-radius: 12px; padding: 12px 14px; }
+    .meter-header { display: flex; justify-content: space-between; font-size: 0.88rem; font-weight: 700; margin-bottom: 6px; }
+    .meter-bar-bg { height: 10px; background: #e0e0e0; border-radius: 999px; overflow: hidden; }
+    .meter-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #ffb26b, #ff7b54, #4ecdc4); transition: width 0.25s; }
+
+    .alert-danger {
+      display: none; margin-top: 14px; padding: 14px 16px; border-radius: 14px;
+      background: #fdecea; border: 2px solid var(--danger); color: #a92216; font-weight: 700;
+    }
+
+    .submit-btn {
+      width: 100%; margin-top: 18px; padding: 15px; border: none; border-radius: 16px;
+      background: linear-gradient(135deg, #ff7b54, #ff9671); color: white;
+      font-family: 'Jua', sans-serif; font-size: 1.25rem; cursor: pointer;
+    }
+
+    /* 게시판 */
+    .board-controls { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .board-controls input { flex: 1; min-width: 200px; }
+    .board-controls select { width: auto; min-width: 140px; }
+    .board-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+
+    .praise-card {
+      background: white; border-radius: 20px; padding: 20px; border: 2px solid var(--border);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .praise-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; gap: 8px; }
+    .to-badge { background: var(--primary-light); color: var(--primary); padding: 5px 12px; border-radius: 999px; font-weight: 700; font-size: 0.9rem; }
+    .cat-badge { background: #e6fcf5; color: #0ca678; padding: 4px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; }
+    .praise-content { margin: 8px 0 16px; white-space: pre-wrap; word-break: break-word; }
+    .praise-footer { border-top: 1.5px dashed #eee; padding-top: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--muted); }
+    .like-btn {
+      border: 1.5px solid #ffd8cc; background: #fff8f6; color: var(--primary);
+      padding: 5px 12px; border-radius: 999px; cursor: pointer; font-weight: 700;
+    }
+    .like-btn.liked { background: var(--primary); color: white; }
+
+    /* TOP 5 */
+    .award-banner {
+      background: linear-gradient(135deg, #fff3bf, #ffe066); border: 3px solid #fcc419;
+      border-radius: 22px; padding: 24px; text-align: center; margin-bottom: 24px; color: #5c4500;
+    }
+    .top5-list { display: flex; flex-direction: column; gap: 16px; }
+    .winner-card {
+      background: white; border-radius: 20px; padding: 20px 24px; border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+    }
+    .winner-card.rank-1 { border: 3px solid #fcc419; background: linear-gradient(to right, #fffdf0, #ffffff); }
+    .winner-left { display: flex; align-items: center; gap: 16px; }
+    .rank-medal {
+      width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: 'Jua', sans-serif; font-size: 1.4rem; background: #e7f5ff; color: #1971c2;
+    }
+    .rank-1 .rank-medal { background: #ffd43b; color: #744d00; }
+    .score-pill { background: var(--primary-light); color: var(--primary); padding: 8px 16px; border-radius: 14px; font-family: 'Jua', sans-serif; font-size: 1.2rem; }
+    .cert-btn { background: var(--accent); color: white; border: none; padding: 10px 16px; border-radius: 12px; font-weight: 700; cursor: pointer; }
+
+    /* 모달 */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+      z-index: 1000; justify-content: center; align-items: center; padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: white; border-radius: 22px; max-width: 440px; width: 100%; padding: 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25); position: relative;
+    }
+    .modal-box h2 { color: var(--primary); margin-bottom: 16px; }
+    .close-x {
+      position: absolute; top: 16px; right: 18px; background: none; border: none;
+      font-size: 1.4rem; cursor: pointer; color: #888;
+    }
+
+    .certificate {
+      background: #fffef8; border: 12px double #e6b800; border-radius: 12px;
+      max-width: 520px; width: 100%; padding: 36px 28px; text-align: center;
+    }
+    .certificate h2 { font-size: 2.3rem; color: #b8860b; letter-spacing: 8px; margin-bottom: 18px; }
+    .cert-name { font-size: 1.35rem; font-weight: 700; margin-bottom: 20px; text-align: right; }
+    .cert-body { font-size: 1.05rem; line-height: 1.9; margin-bottom: 24px; }
+
+    @media print {
+      body * { visibility: hidden; }
+      .certificate, .certificate * { visibility: visible; }
+      .certificate { position: absolute; left: 0; top: 0; }
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="domain-tag">🌐 kyungdongcompliment2026.com</div>
+    <div class="auth-bar" id="authBar"></div>
+  </div>
+
+  <header>
+    <h1>경동초 칭찬 우체통 💌</h1>
+    <p>회원가입 후 친구에게 따뜻한 칭찬을 보내고 모두와 함께 나누어요!</p>
+  </header>
+
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="switchTab('write', this)">✍️ 칭찬 글쓰기</button>
+    <button class="tab-btn" onclick="switchTab('board', this)">📋 칭찬 게시판</button>
+    <button class="tab-btn" onclick="switchTab('awards', this)">🏆 칭찬상 TOP 5</button>
+  </nav>
+
+  <main class="container">
+    <!-- 1. 칭찬 글쓰기 -->
+    <section id="tab-write" class="section active">
+      <div class="card">
+        <h2 class="section-title">💌 친구에게 칭찬 편지 보내기</h2>
+        <div class="notice-box">
+          <strong>🌟 바른말 약속!</strong> 욕설이나 나쁜 말은 자동으로 차단되며, 내가 작성한 글은 내 이름으로 칭찬 게시판에 저장·공유됩니다.
+        </div>
+
+        <div id="writeLoginPrompt" class="login-required-box" style="display:none;">
+          <p style="font-size:1.1rem; margin-bottom:14px;">칭찬 편지를 쓰려면 먼저 <strong>회원가입</strong> 또는 <strong>로그인</strong>을 해주세요! 😊</p>
+          <button class="auth-btn primary" onclick="openAuthModal('register')">✨ 내 이름으로 회원가입하기</button>
+          <button class="auth-btn" onclick="openAuthModal('login')">로그인</button>
+        </div>
+
+        <form id="praiseForm">
+          <div style="background:#f8f9fa; padding:12px 16px; border-radius:12px; margin-bottom:16px;">
+            😊 <strong>보내는 사람:</strong> <span id="senderInfoText" style="color:var(--primary); font-weight:700;"></span>
+          </div>
+
+          <h3 style="margin-bottom:10px;">🎁 칭찬받을 친구 정보</h3>
+          <div class="input-row">
+            <div>
+              <label for="toGrade">학년</label>
+              <select id="toGrade" required>
+                <option value="">선택</option>
+                <option value="1">1학년</option><option value="2">2학년</option>
+                <option value="3">3학년</option><option value="4">4학년</option>
+                <option value="5">5학년</option><option value="6">6학년</option>
+              </select>
+            </div>
+            <div>
+              <label for="toClass">반</label>
+              <select id="toClass" required>
+                <option value="">선택</option>
+                <option value="1">1반</option><option value="2">2반</option>
+                <option value="3">3반</option><option value="4">4반</option>
+                <option value="5">5반</option><option value="6">6반</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-bottom:16px;">
+            <label for="toName">친구 이름</label>
+            <input type="text" id="toName" placeholder="칭찬받을 친구의 이름을 입력하세요" maxlength="10" required />
+          </div>
+
+          <label>🏷️ 어떤 점이 멋졌나요?</label>
+          <div class="tag-list">
+            <button type="button" class="tag-chip selected" data-tag="친절과 배려">💖 친절과 배려</button>
+            <button type="button" class="tag-chip" data-tag="도움의 손길">🤝 도움의 손길</button>
+            <button type="button" class="tag-chip" data-tag="성실과 노력">🔥 성실과 노력</button>
+            <button type="button" class="tag-chip" data-tag="웃음과 용기">😊 웃음과 용기</button>
+            <button type="button" class="tag-chip" data-tag="바른 생활">🌱 바른 생활</button>
+          </div>
+
+          <label for="praiseContent">✏️ 칭찬 내용 (정성껏 쓸수록 칭찬상 점수가 올라가요!)</label>
+          <textarea id="praiseContent" placeholder="친구가 어떤 행동을 해서 고마웠는지 자세히 적어주세요!" maxlength="400" required></textarea>
+
+          <div class="sincerity-meter">
+            <div class="meter-header">
+              <span>✨ 정성 지수: <strong id="sincerityText">작성을 시작해 보세요!</strong></span>
+              <span id="charCount">0 / 400자</span>
+            </div>
+            <div class="meter-bar-bg"><div class="meter-bar-fill" id="meterFill"></div></div>
+          </div>
+
+          <div class="alert-danger" id="badWordAlert"></div>
+          <button type="submit" class="submit-btn">📮 모두와 공유하기</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 2. 칭찬 게시판 -->
+    <section id="tab-board" class="section">
+      <div class="card">
+        <h2 class="section-title">📋 우리 학교 칭찬 게시판</h2>
+        <div class="board-controls">
+          <input type="text" id="searchInput" placeholder="🔍 친구 이름이나 내용 검색..." />
+          <select id="filterGrade">
+            <option value="">전체 학년</option>
+            <option value="1">1학년</option><option value="2">2학년</option>
+            <option value="3">3학년</option><option value="4">4학년</option>
+            <option value="5">5학년</option><option value="6">6학년</option>
+          </select>
+        </div>
+        <div class="board-grid" id="boardGrid"></div>
+      </div>
+    </section>
+
+    <!-- 3. 칭찬상 TOP 5 -->
+    <section id="tab-awards" class="section">
+      <div class="award-banner">
+        <h2>🏆 경동초 칭찬상 TOP 5</h2>
+        <p>가장 정성껏 친구들을 칭찬해 준 5명의 멋진 경동초 학생들을 축하합니다!</p>
+      </div>
+      <div class="top5-list" id="top5List"></div>
+    </section>
+  </main>
+
+  <!-- 회원가입 / 로그인 모달 -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-box">
+      <button class="close-x" onclick="closeAuthModal()">✕</button>
+      <h2 id="authModalTitle">회원가입</h2>
+
+      <form id="authForm">
+        <div id="registerFields">
+          <label for="regName">내 이름 (실명)</label>
+          <input type="text" id="regName" placeholder="예: 김경동" maxlength="10" style="margin-bottom:10px;" />
+
+          <div class="input-row">
+            <div>
+              <label for="regGrade">학년</label>
+              <select id="regGrade">
+                <option value="1">1학년</option><option value="2">2학년</option>
+                <option value="3">3학년</option><option value="4">4학년</option>
+                <option value="5">5학년</option><option value="6">6학년</option>
+              </select>
+            </div>
+            <div>
+              <label for="regClass">반</label>
+              <select id="regClass">
+                <option value="1">1반</option><option value="2">2반</option>
+                <option value="3">3반</option><option value="4">4반</option>
+                <option value="5">5반</option><option value="6">6반</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <label for="authUsername">아이디</label>
+        <input type="text" id="authUsername" placeholder="3자 이상 영문/숫자" required style="margin-bottom:10px;" />
+
+        <label for="authPassword">비밀번호</label>
+        <input type="password" id="authPassword" placeholder="4자 이상" required style="margin-bottom:14px;" />
+
+        <div class="alert-danger" id="authError" style="margin-bottom:12px;"></div>
+        <button type="submit" class="submit-btn" id="authSubmitBtn">가입하기</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 상장 모달 -->
+  <div class="modal-overlay" id="certModal">
+    <div class="certificate">
+      <h2>상 장</h2>
+      <div class="cert-name" id="certStudentName"></div>
+      <div class="cert-body">
+        위 학생은 평소 바르고 고운 말로 친구들을 아끼고,<br />
+        다른 사람의 장점을 찾아 정성껏 칭찬하여<br />
+        경동초등학교를 따뜻하게 만드는 데 앞장섰으므로<br />
+        이 상장을 수여합니다.
+      </div>
+      <div id="certDate" style="margin-bottom:20px; font-weight:700;"></div>
+      <div class="no-print" style="display:flex; justify-content:center; gap:10px;">
+        <button class="cert-btn" onclick="window.print()">🖨️ 상장 인쇄하기</button>
+        <button class="auth-btn" onclick="document.getElementById('certModal').classList.remove('open')">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const BAD_WORDS = [
+      '시발', '씨발', 'ㅅㅂ', 'ㅆㅂ', '병신', 'ㅂㅅ', '빙신', '지랄', 'ㅈㄹ',
+      '개새', '새끼', '개같', '미친', 'ㅁㅊ', '꺼져', '닥쳐', '죽어', '뒤져',
+      '바보', '멍청', '등신', '찐따', '찌질', '왕따', '한심', '짜증', '혐오',
+      '돼지', '못생', '냄새', '꼴값', '썅', '존나', 'ㅈㄴ', '개빡', '빡치',
+      '엿먹', '재수없', '극혐', '느금', '니미', '엠창', '호구', '쪼다'
+    ];
+
+    function hasBadWords(text) {
+      const lower = text.toLowerCase();
+      const norm = lower.replace(/[\s0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]/g, '');
+      return BAD_WORDS.some(w => lower.includes(w) || norm.includes(w));
+    }
+
+    function escapeHTML(str) {
+      return String(str).replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+    }
+
+    let currentUser = null;
+    let authMode = 'register';
+    let selectedTag = '친절과 배려';
+    let allPosts = [];
+
+    // ==========================================
+    // 1. 로그인 상태 확인 및 UI 갱신
+    // ==========================================
+    async function checkMe() {
+      const res = await fetch('/api/auth/me');
+      const data = await res.json();
+      currentUser = data.user;
+      renderAuthUI();
+    }
+
+    function renderAuthUI() {
+      const bar = document.getElementById('authBar');
+      const form = document.getElementById('praiseForm');
+      const prompt = document.getElementById('writeLoginPrompt');
+
+      if (currentUser) {
+        bar.innerHTML = `
+          <span>👋 <strong>${escapeHTML(currentUser.grade)}-${escapeHTML(currentUser.classNum)} ${escapeHTML(currentUser.name)}</strong>님</span>
+          <button class="auth-btn" onclick="logout()">로그아웃</button>
+        `;
+        form.style.display = 'block';
+        prompt.style.display = 'none';
+        document.getElementById('senderInfoText').textContent =
+          `${currentUser.grade}학년 ${currentUser.classNum}반 ${currentUser.name}`;
+      } else {
+        bar.innerHTML = `
+          <button class="auth-btn" onclick="openAuthModal('login')">로그인</button>
+          <button class="auth-btn primary" onclick="openAuthModal('register')">회원가입</button>
+        `;
+        form.style.display = 'none';
+        prompt.style.display = 'block';
+      }
+    }
+
+    function openAuthModal(mode) {
+      authMode = mode;
+      document.getElementById('authError').style.display = 'none';
+      document.getElementById('authForm').reset();
+
+      if (mode === 'register') {
+        document.getElementById('authModalTitle').textContent = '✨ 경동초 학생 회원가입';
+        document.getElementById('registerFields').style.display = 'block';
+        document.getElementById('regName').required = true;
+        document.getElementById('authSubmitBtn').textContent = '회원가입 완료하기';
+      } else {
+        document.getElementById('authModalTitle').textContent = '🔑 로그인';
+        document.getElementById('registerFields').style.display = 'none';
+        document.getElementById('regName').required = false;
+        document.getElementById('authSubmitBtn').textContent = '로그인하기';
+      }
+      document.getElementById('authModal').classList.add('open');
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.remove('open');
+    }
+
+    document.getElementById('authForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errEl = document.getElementById('authError');
+      errEl.style.display = 'none';
+
+      const username = document.getElementById('authUsername').value.trim();
+      const password = document.getElementById('authPassword').value;
+
+      const url = authMode === 'register' ? '/api/auth/register' : '/api/auth/login';
+      const body = authMode === 'register'
+        ? {
+            username,
+            password,
+            name: document.getElementById('regName').value.trim(),
+            grade: document.getElementById('regGrade').value,
+            classNum: document.getElementById('regClass').value
+          }
+        : { username, password };
+
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        errEl.textContent = data.error;
+        errEl.style.display = 'block';
+        return;
+      }
+
+      currentUser = data.user;
+      closeAuthModal();
+      renderAuthUI();
+      loadBoard();
+    });
+
+    async function logout() {
+      await fetch('/api/auth/logout', { method: 'POST' });
+      currentUser = null;
+      renderAuthUI();
+      loadBoard();
+    }
+
+    // ==========================================
+    // 2. 탭 전환 및 글쓰기
+    // ==========================================
+    function switchTab(tab, btn) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + tab).classList.add('active');
+      if (btn) btn.classList.add('active');
+      else document.querySelectorAll('.tab-btn')[tab === 'write' ? 0 : tab === 'board' ? 1 : 2].classList.add('active');
+
+      if (tab === 'board') loadBoard();
+      if (tab === 'awards') loadTop5();
+    }
+
+    document.querySelectorAll('.tag-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.tag-chip').forEach(c => c.classList.remove('selected'));
+        chip.classList.add('selected');
+        selectedTag = chip.dataset.tag;
+      });
+    });
+
+    const contentEl = document.getElementById('praiseContent');
+    contentEl.addEventListener('input', () => {
+      const len = contentEl.value.trim().length;
+      document.getElementById('charCount').textContent = `${contentEl.value.length} / 400자`;
+      document.getElementById('meterFill').style.width = Math.min(100, Math.round((len / 80) * 100)) + '%';
+
+      const txt = document.getElementById('sincerityText');
+      if (len === 0) txt.textContent = '작성을 시작해 보세요!';
+      else if (len < 20) txt.textContent = '조금만 더 자세히 적어볼까요? 🌱';
+      else if (len < 50) txt.textContent = '마음이 따뜻해지는 글이에요! 😊';
+      else txt.textContent = '정성이 가득한 최고의 칭찬이에요! 🌟';
+
+      const alertEl = document.getElementById('badWordAlert');
+      if (hasBadWords(contentEl.value)) {
+        alertEl.textContent = '🚫 나쁜 말은 사용할 수 없습니다. 고운 말로 고쳐주세요!';
+        alertEl.style.display = 'block';
+      } else {
+        alertEl.style.display = 'none';
+      }
+    });
+
+    document.getElementById('praiseForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const alertEl = document.getElementById('badWordAlert');
+      const payload = {
+        toGrade: document.getElementById('toGrade').value,
+        toClass: document.getElementById('toClass').value,
+        toName: document.getElementById('toName').value.trim(),
+        category: selectedTag,
+        content: contentEl.value.trim()
+      };
+
+      const res = await fetch('/api/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        alertEl.textContent = '🚫 ' + data.error;
+        alertEl.style.display = 'block';
+        return;
+      }
+
+      document.getElementById('praiseForm').reset();
+      document.getElementById('charCount').textContent = '0 / 400자';
+      document.getElementById('meterFill').style.width = '0%';
+      alert('🎉 칭찬 게시판에 성공적으로 저장·공유되었습니다!');
+      switchTab('board');
+    });
+
+    // ==========================================
+    // 3. 게시판 및 TOP 5 로드
+    // ==========================================
+    async function loadBoard() {
+      const res = await fetch('/api/posts');
+      const data = await res.json();
+      allPosts = data.posts || [];
+      renderBoard();
+    }
+
+    function renderBoard() {
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      const g = document.getElementById('filterGrade').value;
+
+      const filtered = allPosts.filter(p => {
+        const matchQ = !q || p.toName.toLowerCase().includes(q) || p.fromName.toLowerCase().includes(q) || p.content.toLowerCase().includes(q);
+        const matchG = !g || p.toGrade === g || p.fromGrade === g;
+        return matchQ && matchG;
+      });
+
+      const grid = document.getElementById('boardGrid');
+      if (filtered.length === 0) {
+        grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:30px; color:#888;">등록된 칭찬 글이 없습니다.</p>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => `
+        <article class="praise-card">
+          <div>
+            <div class="praise-card-top">
+              <span class="to-badge">To. ${escapeHTML(p.toGrade)}-${escapeHTML(p.toClass)} ${escapeHTML(p.toName)}</span>
+              <span class="cat-badge">${escapeHTML(p.category)}</span>
+            </div>
+            <p class="praise-content">${escapeHTML(p.content)}</p>
+          </div>
+          <div class="praise-footer">
+            <div>
+              <strong>From. ${escapeHTML(p.fromGrade)}-${escapeHTML(p.fromClass)} ${escapeHTML(p.fromName)}</strong><br />
+              <span style="font-size:0.75rem;">${escapeHTML(p.createdAt)}</span>
+            </div>
+            <button class="like-btn ${p.likedByMe ? 'liked' : ''}" onclick="toggleLike(${p.id})">👏 공감 ${p.likes}</button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    async function toggleLike(id) {
+      if (!currentUser) {
+        alert('공감을 누르려면 먼저 로그인해 주세요!');
+        openAuthModal('login');
+        return;
+      }
+      const res = await fetch(`/api/posts/${id}/like`, { method: 'POST' });
+      if (res.ok) loadBoard();
+    }
+
+    document.getElementById('searchInput').addEventListener('input', renderBoard);
+    document.getElementById('filterGrade').addEventListener('change', renderBoard);
+
+    async function loadTop5() {
+      const res = await fetch('/api/awards/top5');
+      const data = await res.json();
+      const list = document.getElementById('top5List');
+      const medals = ['🥇 1위', '🥈 2위', '🥉 3위', '🏅 4위', '🏅 5위'];
+
+      list.innerHTML = (data.top5 || []).map((s, idx) => `
+        <div class="winner-card rank-${idx + 1}">
+          <div class="winner-left">
+            <div class="rank-medal">${idx + 1}위</div>
+            <div>
+              <h3>${medals[idx]} · ${escapeHTML(s.grade)}학년 ${escapeHTML(s.classNum)}반 ${escapeHTML(s.name)}</h3>
+              <div style="font-size:0.9rem; color:#777;">
+                칭찬 ${s.count}회 · 칭찬한 친구 ${s.recipientCount}명 · 받은 공감 ${s.totalLikes}회
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div class="score-pill">✨ ${s.score}점</div>
+            <button class="cert-btn" onclick="openCert('${escapeHTML(s.grade)}','${escapeHTML(s.classNum)}','${escapeHTML(s.name)}',${idx + 1})">📜 상장 보기</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openCert(grade, classNum, name, rank) {
+      document.getElementById('certStudentName').textContent = `경동초등학교 ${grade}학년 ${classNum}반 ${name}`;
+      const now = new Date();
+      document.getElementById('certDate').innerHTML = `${now.getFullYear()}년 ${now.getMonth()+1}월 ${now.getDate()}일<br>경동초등학교 칭찬 우체통 (칭찬상 ${rank}위) 🏫`;
+      document.getElementById('certModal').classList.add('open');
+    }
+
+    checkMe();
+    loadBoard();
+  </script>
+</body>
+</html>
